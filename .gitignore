@@ -1,0 +1,63 @@
+/**
+ * @(#)GuessingGame.java
+ *
+ *
+ * @Caleb Drake
+ * @version 1.00 2015/10/1
+ */
+
+import java.util.Random;
+public class GuessingGame {
+
+    public static void main(String[] args){
+    	
+    	int guess = 102;
+    	int tries = 0;
+    	int playAgainCounter = 4;
+    	boolean playAgain = true;
+    	
+    	java.util.Scanner input = new java.util.Scanner(System.in);
+    	
+    	while(playAgain == true){
+    		
+    		tries = 0;
+    
+	    	System.out.println("Let's play a game. I am thinking of a number between 1 and 100. Can you guess it?");
+	    	
+	    	Random brain = new Random();
+	    	int num = brain.nextInt(101);
+	    	
+	    	while(guess != num){
+	    		tries++;
+	    		guess = input.nextInt();
+	    		
+	    		if(guess < num){
+	    			System.out.println("Too low. Guess again!");
+	    		}
+	    		if(guess > num){
+					System.out.println("Too high! Try again.");
+	    		}
+	    	}
+	    	if (guess == num){
+	    		System.out.println("Conglaturation! You won! The number was " + num + " and it took you " + tries + " tries.");
+	    	}
+	    			System.out.println("Would you like to play again? Enter 1 for yes and 2 for no.");
+	    	
+	    		playAgainCounter = input.nextInt();
+	    		
+	    		if(playAgainCounter == 1){
+	    			playAgain = true;
+	    		}
+	    		else if(playAgainCounter == 2){
+	    			playAgain = false;
+	    		}
+	    		
+	    
+	    	
+    	}
+    	
+    	
+    }
+    
+    
+}
